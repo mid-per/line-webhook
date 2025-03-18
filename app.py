@@ -13,6 +13,11 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('j8CgsyJm1019tc98Uj9DEbIxWK3JjvfKGxS8h4Qk826K9vWOb6fmZydEJzxCF3ZII/BY0Fb3El8Ls9uBIqGCtH08BziNQoKBNJK+KQfZ6/TKUT7u1SUcsNF/pomh//A4n51Z1IxZYH2l24MGyomuWwdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('a8dec9b9cff01e94ec1e3069477009fc')
 
+# Root route
+@app.route('/')
+def index():
+    return 'LINE Chatbot is running!'
+
 # Webhook route
 @app.route('/webhook', methods=['POST'])
 def webhook():
